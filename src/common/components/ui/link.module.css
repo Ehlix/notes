@@ -1,0 +1,8 @@
+.link {
+  padding: 0;
+  border: none;
+  background-color: #ff555560;
+  color: var(--foreground);
+  min-width: 0;
+  width: 100%;
+}

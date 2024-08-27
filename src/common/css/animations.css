@@ -1,0 +1,25 @@
+.animation_spin {
+  animation: spin 1000ms infinite;
+}
+
+@keyframes animation_spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animation_fade_in {
+  animation: animation_fade_in 444ms alternate;
+}
+
+@keyframes animation_fade_in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100;
+  }
+}

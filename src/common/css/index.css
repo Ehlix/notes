@@ -1,0 +1,91 @@
+@import "./vars.css";
+@import "./animations.css";
+
+:root {
+  font-family: "Pixelify Sans", sans-serif, Inter, system-ui, Avenir, Helvetica,
+    Arial;
+  font-optical-sizing: auto;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--foreground);
+  background-color: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 100dvw - (100dvw - 100%);
+  min-height: 100dvh;
+  z-index: -20;
+}
+
+h1 {
+  font-size: var(--text-2xl);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: var(--text-xl);
+  line-height: 1.1;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+  min-width: 100%;
+  min-height: 100dvh;
+  text-align: center;
+}
+
+button {
+  /* border-radius: 8px; */
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--background-foreground);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5rem;
+}

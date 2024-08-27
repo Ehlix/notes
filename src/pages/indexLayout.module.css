@@ -1,0 +1,35 @@
+@import "@/common/css/vars.css";
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    justify-content: center;
+    display: flex;
+    button {
+      min-width: 12rem;
+      background: none;
+      color: var(--foreground);
+      padding: var(--padding-sm) 1rem;
+      &:hover {
+        animation: animation_ping 900ms infinite;
+      }
+    }
+  }
+}
+
+@keyframes animation_ping {
+  0% {
+    background: none;
+    color: var(--foreground);
+  }
+  50% {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+  100% {
+    background: none;
+    color: var(--foreground);
+  }
+}
