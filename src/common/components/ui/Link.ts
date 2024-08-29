@@ -1,4 +1,4 @@
-import { h } from "snabbdom";
+import { h, VNodeChildElement } from "snabbdom";
 import style from "./link.module.css";
 import { goTo } from "../../../router";
 import { ctx } from "../../../main";
@@ -6,6 +6,7 @@ import { ctx } from "../../../main";
 type Props = {
   href: string;
   title: string;
+  children?: VNodeChildElement[];
 };
 
 export const Link = (props: Props) => {
@@ -16,6 +17,6 @@ export const Link = (props: Props) => {
         click: () => goTo(ctx, props.href, props.title),
       },
     },
-    props.title,
+    props.children || props.title,
   );
 };

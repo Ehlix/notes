@@ -7,7 +7,7 @@ import {
   eventListenersModule,
   VNode,
 } from "snabbdom";
-import { createCtx } from "@reatom/framework";
+import { createCtx } from "@reatom/core";
 import * as router from "./router";
 import {
   BackgroundAnimation,

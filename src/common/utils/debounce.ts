@@ -1,6 +1,6 @@
 export const debounce = (
   callback: (...any: unknown[]) => void,
-  wait: number
+  wait: number,
 ) => {
   let timeoutId: undefined | number = undefined;
   return (...args: unknown[]) => {

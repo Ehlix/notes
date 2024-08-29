@@ -4,7 +4,7 @@ import styles from "./notesPage.module.css";
 import { Link } from "../../common/components/ui/Link";
 
 export const NotesPage = () =>
-  h("div.container.animation_fade_in", [
+  h(`div.animation_fade_in.${styles.notes}`, [
     h(
       `ul.${styles.top_level}`,
       nestedRouts.map((data) => {
@@ -18,7 +18,14 @@ export const NotesPage = () =>
                 `ul.${styles[`level_${level}`]}`,
                 items.map((item) => {
                   return h("li", [
-                    Link({ href: item.link, title: item.title }),
+                    Link({
+                      href: item.link,
+                      title: item.title,
+                      children: [
+                        item.title,
+                        item.icon ? h(`i.${item.icon}.${styles.icon}`) : "",
+                      ],
+                    }),
                     (item.subData?.length &&
                       getChildrenNode(item.subData, level + 1)) ||
                       "",
@@ -30,7 +37,14 @@ export const NotesPage = () =>
         };
 
         return h("li", [
-          Link({ href: data.link, title: data.title }),
+          Link({
+            href: data.link,
+            title: data.title,
+            children: [
+              data.title,
+              data.icon ? h(`i.${data.icon}.${styles.icon}`) : "",
+            ],
+          }),
           data.subData.length ? getChildrenNode(data.subData, 0) : "",
         ]);
       }),

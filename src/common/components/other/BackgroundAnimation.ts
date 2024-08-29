@@ -35,6 +35,14 @@ export const start = (canvas: HTMLCanvasElement) => {
     stars = genStars();
   }, 200);
 
+  // window.addEventListener('resize', function () {
+  //   // const aspect = window.innerWidth / window.innerHeight;
+  //   // width = this.window.innerWidth;
+  //   // height = this.window.innerHeight;
+  //   console.log('resize');
+  //   rerender();
+  // });
+
   const draw = () => {
     ctx.clearRect(0, 0, scaledWidth, scaledHeight);
 
@@ -68,17 +76,19 @@ export const start = (canvas: HTMLCanvasElement) => {
 };
 
 export const BackgroundAnimation = () => {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
   return h("canvas#canvas", {
     props: {
-      width: "1000",
-      height: "1000",
+      width: width,
+      height: height,
     },
     style: {
       "background-image":
         "radial-gradient(circle, #000d21, #000d20, #000d1f, #000d1e, #000d1d)",
       position: "fixed",
-      width: "100dvw",
-      height: "100dvh",
+      minWidth: "100dvw",
+      minHeight: "100dvh",
       left: "0",
       top: "0",
       zIndex: "-10",

@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@reatom/framework':
-        specifier: ^3.4.49
-        version: 3.4.49
+      '@reatom/core':
+        specifier: ^3.9.0
+        version: 3.9.0
       axios:
         specifier: ^1.7.5
         version: 1.7.5
@@ -171,32 +171,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@reatom/async@3.15.3':
-    resolution: {integrity: sha512-fHnwTMK63MolmK9lnvVot0sOi+K77BRTj5iQlfen1sF+2QdlFOmaNog34+DKQEb3LoHg+HiekqrJsC9myo7rKA==}
-
   '@reatom/core@3.9.0':
     resolution: {integrity: sha512-ExlVfQ0rAkxnwWgbxWeNG4S5eNeTFpNlbFZMQHJ5MI+It7aYkqOie3Eh0ssk6AuvEPxzWM8+glsaZFQ6fPmTow==}
-
-  '@reatom/effects@3.8.3':
-    resolution: {integrity: sha512-VUGiIi7IOSP/SpBxMZ6DRbV8NOgbWYws1DpdRB7UMx2qTx3jeNBKPyz/+WjKc5CpSKg1wSuyrwJl/xQSXhgVIA==}
-
-  '@reatom/framework@3.4.49':
-    resolution: {integrity: sha512-rvWzWET79WqPq2YlYRUSP532ZMZgyh2AxZQrrKDIwbdfSptR8D/w7NuiRegjjNAYjFW3oCG9AiQvu2PJayEGag==}
-
-  '@reatom/hooks@3.5.5':
-    resolution: {integrity: sha512-6exYUEB9MuqOaIMEaeiapar/TLx7fkrZnULBg5+gW2krhugzpDufapN6C7taiQuPS58NKLOQhVvz+ZzSQN5HbA==}
-
-  '@reatom/lens@3.11.2':
-    resolution: {integrity: sha512-jDY8CiebPXODNsMDhUYAtglPW1Mi1I9LCfKR5U+nCEcGRF7A1KBsYy84Q9JyqOaZeQ4pM/nVQynVb88jRyx/UA==}
-
-  '@reatom/logger@3.8.4':
-    resolution: {integrity: sha512-MOz8Td1eZV+kU4QpkZXAdO9qFtGjqpm40crIlMNweDtOH7GgUmV2oKgOXRORQzYbeGHVMlQHG4J5iPeEQdM7KA==}
-
-  '@reatom/primitives@3.7.3':
-    resolution: {integrity: sha512-HzG2aoGzE2W410ZSqnT8hd21Xd+bNMIkN03tq7dWgZ4OAZKawVnxdeB8bHu+oA5ppxICfrY0HtPUUeQTbvxfgQ==}
-
-  '@reatom/utils@3.10.0':
-    resolution: {integrity: sha512-npRrZCb778MxGb2ukhYax5oX5swVRgTA2m69FjQhC3ROJQ9vCbSDzzXn2bAQDDpcbc/lhsStaaYtoEK/JkKP1w==}
 
   '@rollup/rollup-android-arm-eabi@4.21.0':
     resolution: {integrity: sha512-WTWD8PfoSAJ+qL87lE7votj3syLavxunWhzCnx3XFxFiI/BA/r3X7MUM8dVrH8rb2r4AiO8jJsr3ZjdaftmnfA==}
@@ -472,57 +448,7 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@reatom/async@3.15.3':
-    dependencies:
-      '@reatom/core': 3.9.0
-      '@reatom/effects': 3.8.3
-      '@reatom/hooks': 3.5.5
-      '@reatom/primitives': 3.7.3
-      '@reatom/utils': 3.10.0
-
   '@reatom/core@3.9.0': {}
-
-  '@reatom/effects@3.8.3':
-    dependencies:
-      '@reatom/core': 3.9.0
-      '@reatom/utils': 3.10.0
-
-  '@reatom/framework@3.4.49':
-    dependencies:
-      '@reatom/async': 3.15.3
-      '@reatom/core': 3.9.0
-      '@reatom/effects': 3.8.3
-      '@reatom/hooks': 3.5.5
-      '@reatom/lens': 3.11.2
-      '@reatom/logger': 3.8.4
-      '@reatom/primitives': 3.7.3
-      '@reatom/utils': 3.10.0
-
-  '@reatom/hooks@3.5.5':
-    dependencies:
-      '@reatom/core': 3.9.0
-      '@reatom/effects': 3.8.3
-      '@reatom/utils': 3.10.0
-
-  '@reatom/lens@3.11.2':
-    dependencies:
-      '@reatom/core': 3.9.0
-      '@reatom/effects': 3.8.3
-      '@reatom/hooks': 3.5.5
-      '@reatom/primitives': 3.7.3
-      '@reatom/utils': 3.10.0
-
-  '@reatom/logger@3.8.4':
-    dependencies:
-      '@reatom/core': 3.9.0
-      '@reatom/utils': 3.10.0
-
-  '@reatom/primitives@3.7.3':
-    dependencies:
-      '@reatom/core': 3.9.0
-      '@reatom/utils': 3.10.0
-
-  '@reatom/utils@3.10.0': {}
 
   '@rollup/rollup-android-arm-eabi@4.21.0':
     optional: true

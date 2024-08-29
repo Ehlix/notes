@@ -1,124 +1,15 @@
-type Items = {
+export type RoutItem = {
   title: string;
   link: string;
-  subData: Items[];
+  icon?: string;
+  subData: RoutItem[];
 };
 
-export const nestedRouts: Items[] = [
+export const nestedRouts: RoutItem[] = [
   {
-    title: "artificial int.",
-    link: "/note/ai",
-    subData: [
-      {
-        title: "chat gpt",
-        link: "/note/ai/chat-gpt",
-        subData: [
-          {
-            title: "coding",
-            link: "/note/ai/chat-gpt/coding",
-            subData: [],
-          },
-          {
-            title: "research",
-            link: "/note/ai/chat-gpt/research",
-            subData: [],
-          },
-          {
-            title: "writing",
-            link: "/note/ai/chat-gpt/writing",
-            subData: [],
-          },
-        ],
-      },
-      {
-        title: "codeium",
-        link: "/note/ai/codeium",
-        subData: [],
-      },
-    ],
-  },
-  {
-    title: "git",
-    link: "/note/git",
-    subData: [
-      {
-        title: "github",
-        link: "/note/git/github",
-        subData: [],
-      },
-    ],
-  },
-  {
-    title: "containers",
-    link: "/note/containers",
-    subData: [
-      {
-        title: "docker",
-        link: "/note/containers/docker",
-        subData: [],
-      },
-      {
-        title: "kubernetes",
-        link: "/note/containers/kubernetes",
-        subData: [],
-      },
-    ],
-  },
-  {
-    title: "databases",
-    link: "/note/databases",
-    subData: [
-      {
-        title: "data science",
-        link: "/note/databases/data-science",
-        subData: [],
-      },
-      {
-        title: "looker",
-        link: "/note/databases/looker",
-        subData: [],
-      },
-      {
-        title: "redis",
-        link: "/note/databases/redis",
-        subData: [],
-      },
-      {
-        title: "sql",
-        link: "/note/databases/sql",
-        subData: [],
-      },
-    ],
-  },
-  {
-    title: "javascript",
-    link: "/note/javascript",
-    subData: [
-      {
-        title: "node",
-        link: "/note/javascript/node",
-        subData: [],
-      },
-      {
-        title: "npm",
-        link: "/note/javascript/npm",
-        subData: [],
-      },
-      {
-        title: "testing",
-        link: "/note/javascript/testing",
-        subData: [],
-      },
-      {
-        title: "typescript",
-        link: "/note/javascript/typescript",
-        subData: [],
-      },
-    ],
-  },
-  {
-    title: "web development",
+    title: "Web Development",
     link: "/note/web",
+    icon: "nf.nf-md-web",
     subData: [
       {
         title: "http",
@@ -133,11 +24,6 @@ export const nestedRouts: Items[] = [
       {
         title: "css",
         link: "/note/web/css",
-        subData: [],
-      },
-      {
-        title: "qwik",
-        link: "/note/web/qwik",
         subData: [],
       },
       {
@@ -161,6 +47,126 @@ export const nestedRouts: Items[] = [
             subData: [],
           },
         ],
+      },
+    ],
+  },
+  {
+    title: "JavaScript",
+    link: "/note/javascript",
+    icon: "nf.nf-fa-js",
+    subData: [
+      {
+        title: "typescript",
+        link: "/note/javascript/typescript",
+        subData: [],
+      },
+      {
+        title: "testing",
+        link: "/note/javascript/testing",
+        subData: [],
+      },
+      {
+        title: "node",
+        link: "/note/javascript/node",
+        subData: [],
+      },
+      {
+        title: "npm",
+        link: "/note/javascript/npm",
+        subData: [],
+      },
+    ],
+  },
+  {
+    title: "Git",
+    link: "/note/git",
+    icon: "nf.nf-dev-git",
+    subData: [
+      {
+        title: "github",
+        link: "/note/git/github",
+        // icon: 'nf.nf-cod-github',
+        subData: [],
+      },
+    ],
+  },
+  {
+    title: "Artificial Int.",
+    link: "/note/ai",
+    icon: "nf.nf-cod-circuit_board",
+    subData: [
+      {
+        title: "chat gpt",
+        link: "/note/ai/chat-gpt",
+        // icon: '',
+        subData: [
+          {
+            title: "research",
+            link: "/note/ai/chat-gpt/research",
+            subData: [],
+          },
+          {
+            title: "writing",
+            link: "/note/ai/chat-gpt/writing",
+            subData: [],
+          },
+          {
+            title: "coding",
+            link: "/note/ai/chat-gpt/coding",
+            subData: [],
+          },
+        ],
+      },
+      {
+        title: "codeium",
+        link: "/note/ai/codeium",
+        subData: [],
+      },
+    ],
+  },
+  {
+    title: "Containers",
+    link: "/note/containers",
+    icon: "nf.nf-fa-cubes",
+    subData: [
+      {
+        title: "kubernetes",
+        link: "/note/containers/kubernetes",
+        // icon: 'nf.nf-md-kubernetes',
+        subData: [],
+      },
+      {
+        title: "docker",
+        link: "/note/containers/docker",
+        // icon: 'nf.nf-fa-docker',
+        subData: [],
+      },
+    ],
+  },
+  {
+    title: "Databases",
+    link: "/note/databases",
+    icon: "nf.nf-seti-db",
+    subData: [
+      {
+        title: "data science",
+        link: "/note/databases/data-science",
+        subData: [],
+      },
+      {
+        title: "looker",
+        link: "/note/databases/looker",
+        subData: [],
+      },
+      {
+        title: "redis",
+        link: "/note/databases/redis",
+        subData: [],
+      },
+      {
+        title: "sql",
+        link: "/note/databases/sql",
+        subData: [],
       },
     ],
   },

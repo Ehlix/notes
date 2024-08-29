@@ -1,7 +1,7 @@
 :root {
   color-scheme: light dark;
 
-  --background: rgb(10 10 15);
+  --background: rgb(20 20 45);
   --foreground: rgb(255 240 240);
 
   --card: rgb(5 5 5);
@@ -10,11 +10,11 @@
   --popover: rgb(4 10 12);
   --popover-foreground: rgb(255 240 240);
 
-  --primary: rgb(88 228 169);
-  --primary-foreground: rgb(3 8 10);
+  --primary: rgb(88 201 169);
+  --primary-foreground: rgb(115 130 140);
 
-  --secondary: rgb(100 115 255);
-  --secondary-foreground: rgb(3 8 10);
+  --secondary: rgb(88 201 169);
+  --secondary-foreground: rgb(0 0 0);
 
   --muted: rgb(20 30 50);
   --muted-foreground: rgb(75 85 90);

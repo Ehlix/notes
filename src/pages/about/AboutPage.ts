@@ -1,4 +1,4 @@
-import { action, atom } from "@reatom/framework";
+import { action, atom } from "@reatom/core";
 import { h, VNode } from "snabbdom";
 import { ctx } from "../../main";
 

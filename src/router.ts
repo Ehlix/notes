@@ -1,4 +1,4 @@
-import { action, atom, Ctx } from "@reatom/framework";
+import { action, atom, Ctx } from "@reatom/core";
 import { VNode } from "snabbdom";
 import { indexLayout } from "./pages/IndexLayout";
 import { settingLayout } from "./pages/settings/settingsLayout";
@@ -20,7 +20,8 @@ export const goTo = action((ctx, newPath: string, title: string) => {
 });
 
 const changeLocation = (value: string, title: string) => {
-  window.history.replaceState(null, title, value);
+  window.history.replaceState(window.history.state, "asef", value);
+  document.title = title;
 };
 
 const staticPages = {

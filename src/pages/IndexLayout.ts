@@ -39,5 +39,6 @@ export const indexLayout = (props: Props) => {
       ),
     ),
     h("main#main.container", props.children),
+    h(`footer.${styles.footer}`),
   ]);
 };

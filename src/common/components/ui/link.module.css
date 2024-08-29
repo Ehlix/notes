@@ -1,8 +1,33 @@
 .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
   padding: 0;
+
   border: none;
-  background-color: #ff555560;
-  color: var(--foreground);
   min-width: 0;
   width: 100%;
+  background: none;
+  color: var(--foreground);
+  &:hover {
+    animation: animation_ping 900ms infinite;
+  }
+}
+
+@media (min-width: 60em) {
+  @keyframes animation_ping {
+    0% {
+      background: none;
+      color: var(--foreground);
+    }
+    50% {
+      background: var(--foreground);
+      color: var(--background);
+    }
+    100% {
+      background: none;
+      color: var(--foreground);
+    }
+  }
 }

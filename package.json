@@ -10,7 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@reatom/framework": "^3.4.49",
+    "@reatom/core": "^3.9.0",
     "axios": "^1.7.5",
     "snabbdom": "^3.6.2"
   },

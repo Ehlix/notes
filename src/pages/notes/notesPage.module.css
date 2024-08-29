@@ -1,25 +1,62 @@
+@import "@/common/css/vars.css";
+
+.notes {
+  line-height: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+
+.icon {
+  min-width: 1.5rem;
+}
+
 .top_level {
   display: flex;
   justify-content: start;
   gap: 2rem;
   flex-wrap: wrap;
+  font-size: var(--text-md);
   height: fit-content;
-  width: 100%;
+  width: fit-content;
+  button {
+    padding: 0 0.25rem;
+    text-align: left;
+    border: 2px solid var(--foreground);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    justify-content: start;
+  }
 }
 
 .level_0,
-.level_1 {
+.level_1,
+.level_2 {
+  font-size: var(--text-sm);
   display: flex;
   flex-direction: column;
   align-items: start;
+  justify-content: start;
+  width: fit-content;
+  button {
+    min-width: 3rem;
+    margin-top: -2px;
+    border: 2px solid var(--foreground);
+    border-right: none;
+  }
+  li {
+    position: relative;
+  }
 }
 
 .level_0 {
-  display: flex;
   margin-left: 1rem;
 }
 
 .level_1 {
-  display: flex;
-  margin-left: 1.5rem;
+  margin-left: 1rem;
 }
