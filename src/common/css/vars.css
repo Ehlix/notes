@@ -2,7 +2,7 @@
   color-scheme: light dark;
 
   --background: rgb(20 20 45);
-  --foreground: rgb(88 180 169);
+  --foreground: rgb(88 180 175);
 
   --card: rgb(5 5 5);
   --card-foreground: rgb(225 0 225);
@@ -24,7 +24,7 @@
   --destructive: rgb(234 48 15);
   --destructive-foreground: rgb(0 0 0);
 
-  --border: rgb(40 40 40);
+  --border: rgba(20, 66, 80);
   --input: rgb(40 60 80);
   --ring: rgb(60 140 170);
 

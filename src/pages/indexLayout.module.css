@@ -1,4 +1,5 @@
 .nav {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,6 +8,23 @@
   ul {
     justify-content: center;
     display: flex;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.1rem;
+    /* background-color: red; */
+    /* border-bottom: 0.1rem solid var(--primary); */
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0%,
+      var(--border) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: -1;
   }
 }
 @media (max-width: 600px) {
@@ -26,9 +44,40 @@
   padding: var(--padding-xs) var(--padding-md);
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .link_current {
-  text-decoration: underline; /* All browsers */
-  text-decoration-color: var(--accent-foreground); /* Firefox only */
-  text-decoration-style: wavy; /* Firefox only */
+  text-decoration: underline;
+  text-decoration-color: var(--accent-foreground);
+  text-decoration-style: wavy;
   text-underline-offset: var(--padding-xs);
+}
+
+.footer {
+  position: relative;
+  padding-top: 0.25rem;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.1rem;
+    /* background-color: red; */
+    /* border-bottom: 0.1rem solid var(--primary); */
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0) 0%,
+      var(--border) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    z-index: -1;
+  }
+  span {
+    color: var(--border);
+  }
 }

@@ -10,11 +10,11 @@ type Props = {
 
 const PAGES = [
   {
-    title: "//Notes",
+    title: "// Notes",
     path: "/",
   },
   {
-    title: "//About",
+    title: "// About",
     path: "/about",
   },
 ];
@@ -37,7 +37,7 @@ export const indexLayout = (props: Props) => {
         ]),
       ),
     ),
-    h("main#main", props.children),
-    h(`footer.${styles.footer}`),
+    h(`main#main.${styles.main}`, props.children),
+    h(`footer.${styles.footer}`, h("span", ["2024"])),
   ]);
 };

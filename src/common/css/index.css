@@ -35,11 +35,11 @@ body {
 
 #app {
   display: grid;
-  grid-template-rows: 4rem 1fr;
+  grid-template-rows: 3rem 1fr 2rem;
+  gap: 1rem;
   min-width: 100%;
   max-width: 100%;
-  min-height: 100%;
-  max-height: 100%;
+  min-height: 100dvh;
   text-align: center;
 }
 
@@ -111,11 +111,6 @@ li {
 
 .container {
   overflow: hidden;
-  max-width: 100dvw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   padding: 0 5rem;
 }
 
