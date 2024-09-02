@@ -11,7 +11,6 @@
   font-weight: 400;
   font-style: normal;
   color: var(--foreground);
-  background-color: var(--background);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,11 +24,31 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--background);
+  min-width: 100dvw - (100dvw - 100%);
+  max-width: 100dvw - (100dvw - 100%);
+  min-height: 100dvh;
+  max-height: 100dvh;
+  overflow-x: hidden;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  text-align: center;
+}
+
 ul,
 ol,
 li {
   list-style: none;
 }
+
 @layer default {
   a {
     min-width: 0;
@@ -56,58 +75,43 @@ li {
         color: var(--accent-foreground);
       }
     }
-  }
 
-  h1 {
-    font-size: var(--text-2xl);
-    line-height: 1.1;
-  }
+    h1 {
+      font-size: var(--text-2xl);
+      line-height: 1.1;
+    }
 
-  h2 {
-    font-size: var(--text-xl);
-    line-height: 1.1;
-  }
+    h2 {
+      font-size: var(--text-xl);
+      line-height: 1.1;
+    }
 
-  button {
-    /* border-radius: 8px; */
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: var(--text-base);
-    font-weight: 500;
-    font-family: inherit;
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-    cursor: pointer;
-    transition: border-color 0.25s;
-  }
+    button {
+      /* border-radius: 8px; */
+      border: 1px solid transparent;
+      padding: 0.6em 1.2em;
+      font-size: var(--text-base);
+      font-weight: 500;
+      font-family: inherit;
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      cursor: pointer;
+      transition: border-color 0.25s;
+    }
 
-  button:hover {
-    border-color: var(--background-foreground);
+    button:hover {
+      border-color: var(--background-foreground);
+    }
   }
+  /* button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  } */
 }
-
-body {
-  position: relative;
-  margin: 0;
-  min-width: 100dvw - (100dvw - 100%);
-  min-height: 100dvh;
-  overflow-x: hidden;
-}
-
-#app {
-  display: grid;
-  grid-template-rows: 5rem 1fr;
-  min-width: 100%;
-  min-height: 100dvh;
-  text-align: center;
-}
-
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
 
 .container {
+  overflow: hidden;
+  max-width: 100dvw;
   display: flex;
   flex-direction: column;
   justify-content: center;

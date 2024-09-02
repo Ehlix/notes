@@ -25,7 +25,6 @@ export const NotePage = () => {
     return h("div.animation_fade_in", "Nothing");
   }
   if (!notes) {
-    console.log("loading");
     return Loading();
   }
   const related = Related();

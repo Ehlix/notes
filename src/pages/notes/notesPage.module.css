@@ -1,5 +1,5 @@
 .notes {
-  line-height: 0;
+  line-height: 0.25;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -9,15 +9,19 @@
 }
 
 .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: var(--text-base);
+  min-height: 2rem;
 }
 
 .link_top {
   display: flex;
   justify-content: center;
+  gap: 0.25rem;
   align-items: center;
-  padding: 0.25rem;
-  height: 1.75rem;
+  height: auto;
   border-bottom: 2px solid var(--accent-foreground);
   font-size: var(--text-base);
 }

@@ -10,19 +10,18 @@ type Props = {
 
 const PAGES = [
   {
-    title: "// Notes",
+    title: "//Notes",
     path: "/",
   },
   {
-    title: "// About",
+    title: "//About",
     path: "/about",
   },
 ];
 
 export const indexLayout = (props: Props) => {
   const currentPath = ctx.get(pathAtom);
-  console.log(currentPath);
-  return h("div#app", [
+  return h("div#app.container", [
     h(
       `nav.${styles.nav}`,
       PAGES.map((page) =>
@@ -31,15 +30,14 @@ export const indexLayout = (props: Props) => {
             "li",
             Link({
               href: page.path,
-              title:
-                page.title + (currentPath === page.path ? " [current]" : ""),
-              class: styles.link,
+              title: page.title,
+              class: `${styles.link} ${currentPath === page.path ? styles.link_current : ""}`,
             }),
           ),
         ]),
       ),
     ),
-    h("main#main.container", props.children),
+    h("main#main", props.children),
     h(`footer.${styles.footer}`),
   ]);
 };

@@ -32,7 +32,6 @@ newLayout = router.getLayout(ctx);
 oldLayout = patch(oldLayout, newLayout);
 
 ctx.subscribe(() => {
-  console.log("----render----");
   newLayout = router.getLayout(ctx);
   oldLayout = patch(oldLayout, newLayout);
 });
