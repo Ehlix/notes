@@ -9,16 +9,12 @@ import {
 } from "snabbdom";
 import { createCtx } from "@reatom/core";
 import * as router from "./router";
-import {
-  BackgroundAnimation,
-  start,
-} from "./common/components/other/BackgroundAnimation";
+import { InitCanvas } from "./common/components/other/BackgroundAnimation";
 
 export const ctx = createCtx();
 
 const app = document.getElementById("app")!;
 
-const canvas = document.getElementById("canvas")!;
 export const patch = init([
   classModule, // makes it easy to toggle classes
   propsModule, // for setting properties on DOM elements
@@ -26,9 +22,8 @@ export const patch = init([
   eventListenersModule, // attaches event listeners
 ]);
 
-patch(canvas, BackgroundAnimation());
-const cvs = document.getElementById("canvas")! as HTMLCanvasElement;
-start(cvs);
+const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
+InitCanvas(canvas);
 
 let oldLayout: HTMLElement | VNode = app;
 let newLayout: VNode;

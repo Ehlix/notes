@@ -25,6 +25,7 @@ export const NotesPage = () =>
                         item.title,
                         item.icon ? h(`i.${item.icon}.${styles.icon}`) : "",
                       ],
+                      class: styles.link_nested,
                     }),
                     (item.subData?.length &&
                       getChildrenNode(item.subData, level + 1)) ||
@@ -44,6 +45,7 @@ export const NotesPage = () =>
               data.title,
               data.icon ? h(`i.${data.icon}.${styles.icon}`) : "",
             ],
+            class: styles.link_top,
           }),
           data.subData.length ? getChildrenNode(data.subData, 0) : "",
         ]);

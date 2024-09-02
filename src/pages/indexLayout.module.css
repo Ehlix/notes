@@ -8,13 +8,14 @@
   ul {
     justify-content: center;
     display: flex;
-    button {
-      min-width: 12rem;
-      padding: var(--padding-sm) 1rem;
-    }
   }
 }
 
 .footer {
   min-height: 5rem;
+}
+
+.link {
+  min-width: 12rem;
+  padding: var(--padding-sm) 1rem;
 }

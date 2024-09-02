@@ -1,46 +1,17 @@
-import { action, atom } from "@reatom/core";
-import { h, VNode } from "snabbdom";
-import { ctx } from "../../main";
+import { h } from "snabbdom";
+import styles from "./about.module.css";
 
-const count = atom(0);
-const count2 = atom(10);
-
-const increment = action((ctx) => {
-  const oldValue = ctx.get(count);
-  count(ctx, oldValue + 1);
-});
-
-const increment2 = action((ctx) => {
-  const oldValue = ctx.get(count2);
-  count2(ctx, oldValue + 1);
-});
-
-type Props = {
-  children: VNode | string;
-};
-
-export const aboutPage = (props: Props) =>
-  h("div#about", [
-    h("div", [
-      h("div", ctx.get(count)),
-      h(
-        "button",
-        {
-          on: {
-            click: () => increment(ctx),
-          },
+export const aboutPage = () =>
+  h("div#about.container", [
+    h(`h1.${styles.title}`, "A.F."),
+    h("div", ["I build stuff for the web"]),
+    h(
+      `a.${styles.link}`,
+      {
+        props: {
+          href: "https://github.com/ehlix",
         },
-        props.children || "",
-      ),
-      h("div", ctx.get(count2)),
-      h(
-        "button",
-        {
-          on: {
-            click: () => increment2(ctx),
-          },
-        },
-        props.children || "",
-      ),
-    ]),
+      },
+      ["GitHub", h("i.nf.nf-cod-github")],
+    ),
   ]);

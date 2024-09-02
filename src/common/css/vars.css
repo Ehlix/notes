@@ -2,7 +2,7 @@
   color-scheme: light dark;
 
   --background: rgb(20 20 45);
-  --foreground: rgb(255 240 240);
+  --foreground: rgb(88 180 169);
 
   --card: rgb(5 5 5);
   --card-foreground: rgb(225 0 225);
@@ -11,14 +11,14 @@
   --popover-foreground: rgb(255 240 240);
 
   --primary: rgb(88 201 169);
-  --primary-foreground: rgb(115 130 140);
+  --primary-foreground: rgb(0 0 0);
 
   --secondary: rgb(88 201 169);
   --secondary-foreground: rgb(0 0 0);
 
-  --muted: rgb(20 30 50);
-  --muted-foreground: rgb(75 85 90);
-  --accent: rgb(255 103 119);
+  --muted: rgb(12 40 55);
+  --muted-foreground: rgb(100 130 135);
+  --accent: rgb(255 188 188);
   --accent-foreground: rgb(255 240 240);
 
   --destructive: rgb(234 48 15);
@@ -29,11 +29,11 @@
   --ring: rgb(60 140 170);
 
   --text-base: 1.5rem;
-  --text-xs: 0.75rem;
-  --text-sm: 1rem;
-  --text-md: 1.5rem;
-  --text-lg: 1.75rem;
-  --text-xl: 2.5rem;
+  --text-xs: 0.5rem;
+  --text-sm: 0.75rem;
+  --text-md: 1rem;
+  --text-lg: 1.5rem;
+  --text-xl: 2rem;
   --text-2xl: 3rem;
   --text-3xl: 4rem;
 
@@ -48,15 +48,16 @@
   --padding-sm: 0.5rem;
   --padding-md: 0.75rem;
   --padding-lg: 1rem;
-  --padding-xl: 2rem;
-  --padding-2xl: 4rem;
+  --padding-xl: 1.5rem;
+  --padding-2xl: 2rem;
+  --padding-3xl: 4rem;
 
-  --radius: 0.75rem;
   --radius-xs: 0.25rem;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
-  --radius-xl: 2rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
   --radius-2xl: 4rem;
 }
 /* @media (prefers-color-scheme: dark) {

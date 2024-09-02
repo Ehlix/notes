@@ -1,9 +1,7 @@
 import { action, atom, Ctx } from "@reatom/core";
 import { VNode } from "snabbdom";
 import { indexLayout } from "./pages/IndexLayout";
-import { settingLayout } from "./pages/settings/settingsLayout";
 import { aboutPage } from "./pages/about/AboutPage";
-import { indexPage } from "./pages/index/IndexPage";
 import { NotesPage } from "./pages/notes/NotesPage";
 import { NotePage } from "./pages/note/NotePage";
 
@@ -22,24 +20,12 @@ export const goTo = action((ctx, newPath: string, title: string) => {
 const changeLocation = (value: string, title: string) => {
   window.history.replaceState(window.history.state, "asef", value);
   document.title = title;
+  window.scrollTo({ top: 0 });
 };
 
 const staticPages = {
-  "/": () => indexLayout({ children: indexPage() }),
-  "/about": () => indexLayout({ children: aboutPage({ children: "heh" }) }),
-  "/note": () => indexLayout({ children: NotesPage() }),
-  "/settings": () =>
-    indexLayout({
-      children: settingLayout({ children: "user settings" }),
-    }),
-  "/settings/security": () =>
-    indexLayout({
-      children: settingLayout({ children: "security" }),
-    }),
-  "/settings/notifications": () =>
-    indexLayout({
-      children: settingLayout({ children: "notifications" }),
-    }),
+  "/about": () => indexLayout({ children: aboutPage() }),
+  "/": () => indexLayout({ children: NotesPage() }),
   notFound: () => indexLayout({ children: "404 Not Found" }),
 } as Record<string, () => VNode>;
 

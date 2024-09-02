@@ -10,12 +10,12 @@ type Props = {
 
 const PAGES = [
   {
-    title: "// Home",
+    title: "// Notes",
     path: "/",
   },
   {
-    title: "// Notes",
-    path: "/note",
+    title: "// About",
+    path: "/about",
   },
 ];
 
@@ -33,6 +33,7 @@ export const indexLayout = (props: Props) => {
               href: page.path,
               title:
                 page.title + (currentPath === page.path ? " [current]" : ""),
+              class: styles.link,
             }),
           ),
         ]),

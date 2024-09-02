@@ -7,14 +7,18 @@ type Props = {
   href: string;
   title: string;
   children?: VNodeChildElement[];
+  class?: string;
 };
 
 export const Link = (props: Props) => {
   return h(
-    `button.${style.link}`,
+    `a.${style.link}.${props.class}`,
     {
+      props: {
+        href: props.href,
+      },
       on: {
-        click: () => goTo(ctx, props.href, props.title),
+        click: (e) => (e.preventDefault(), goTo(ctx, props.href, props.title)),
       },
     },
     props.children || props.title,

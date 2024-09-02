@@ -1,10 +1,3 @@
-export type RoutItem = {
-  title: string;
-  link: string;
-  icon?: string;
-  subData: RoutItem[];
-};
-
 export const nestedRouts: RoutItem[] = [
   {
     title: "Web Development",
@@ -117,11 +110,6 @@ export const nestedRouts: RoutItem[] = [
           },
         ],
       },
-      {
-        title: "codeium",
-        link: "/note/ai/codeium",
-        subData: [],
-      },
     ],
   },
   {
@@ -169,5 +157,11 @@ export const nestedRouts: RoutItem[] = [
         subData: [],
       },
     ],
+  },
+  {
+    title: "Markdown",
+    link: "/note/markdown",
+    icon: "nf.nf-dev-markdown",
+    subData: [],
   },
 ];

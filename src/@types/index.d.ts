@@ -10,3 +10,10 @@ type Note = {
 };
 
 type NoteResponse = Note[];
+
+type RoutItem = {
+  title: string;
+  link: string;
+  icon?: string;
+  subData: RoutItem[];
+};

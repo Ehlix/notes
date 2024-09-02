@@ -1,0 +1,14 @@
+.title {
+  color: var(--foreground);
+}
+
+.link {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+  i {
+    min-width: 1rem;
+  }
+  padding: 0 var(--padding-lg);
+}
