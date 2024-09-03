@@ -133,11 +133,11 @@ li {
     #000d20,
     #000d1f,
     #000d1e,
-    #000d1d
+    var(--background)
   );
   position: fixed;
-  min-width: 100dvw;
-  min-height: 100dvh;
+  min-width: 100vw;
+  min-height: 100vh;
   left: 0;
   top: 0;
   z-index: -10;
