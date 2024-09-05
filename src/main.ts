@@ -1,4 +1,4 @@
-import "./common/css/index.css";
+import './common/css/index.css';
 import {
   init,
   classModule,
@@ -6,14 +6,14 @@ import {
   styleModule,
   eventListenersModule,
   VNode,
-} from "snabbdom";
-import { createCtx } from "@reatom/core";
-import * as router from "./router";
-import { InitCanvas } from "./common/components/other/BackgroundAnimation";
+} from 'snabbdom';
+import { createCtx, Ctx } from '@reatom/core';
+import * as router from './router';
+import { InitCanvas } from './common/components/other/BackgroundAnimation';
 
 export const ctx = createCtx();
 
-const app = document.getElementById("app")!;
+const app = document.getElementById('app')!;
 
 export const patch = init([
   classModule, // makes it easy to toggle classes
@@ -22,16 +22,16 @@ export const patch = init([
   eventListenersModule, // attaches event listeners
 ]);
 
-const canvas = document.getElementById("canvas")! as HTMLCanvasElement;
+const canvas = document.getElementById('canvas')! as HTMLCanvasElement;
 InitCanvas(canvas);
 
 let oldLayout: HTMLElement | VNode = app;
 let newLayout: VNode;
 
-newLayout = router.getLayout(ctx);
-oldLayout = patch(oldLayout, newLayout);
-
-ctx.subscribe(() => {
+export const render = (ctx: Ctx) => {
   newLayout = router.getLayout(ctx);
   oldLayout = patch(oldLayout, newLayout);
-});
+};
+render(ctx);
+
+router.subToPathAtom(() => render(ctx));

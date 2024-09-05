@@ -7,7 +7,7 @@
     Arial;
   font-optical-sizing: auto;
   font-size: var(--text-base);
-  line-height: 1.5;
+  line-height: 1.1;
   font-weight: 400;
   font-style: normal;
   color: var(--foreground);
@@ -27,9 +27,7 @@
 body {
   background-color: var(--background);
   min-width: 100dvw - (100dvw - 100%);
-  max-width: 100dvw - (100dvw - 100%);
   min-height: 100dvh;
-  max-height: 100dvh;
   overflow-x: hidden;
 }
 

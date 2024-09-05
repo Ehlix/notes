@@ -54,12 +54,12 @@
   text-decoration: underline;
   text-decoration-color: var(--accent-foreground);
   text-decoration-style: wavy;
-  text-underline-offset: var(--padding-xs);
+  text-underline-offset: 0.1rem;
 }
 
 .footer {
   position: relative;
-  padding-top: 0.25rem;
+  padding-top: 0.5rem;
   &::before {
     content: "";
     position: absolute;

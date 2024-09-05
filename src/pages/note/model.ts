@@ -1,31 +1,32 @@
-import { getNote } from "@/common/api/getNote";
-import { pathAtom } from "@/router";
-import { action, atom, Ctx } from "@reatom/core";
-import { AxiosError } from "axios";
+import { getNote } from '@/common/api/getNote';
+import { render } from '@/main';
+import { getCurrentPath, subToPathAtom } from '@/router';
+import { action, atom, Ctx } from '@reatom/core';
+import { AxiosError } from 'axios';
 
-export const noteAtom = atom<NoteResponse | null>(null);
-export const errorAtom = atom(false);
+const noteAtom = atom<NoteResponse | null>(null);
+const errorAtom = atom(false);
+
+noteAtom.onChange((ctx) => render(ctx));
+errorAtom.onChange((ctx) => render(ctx));
 
 let secondTry = false;
 let noteHaveSub = false;
 
-export const getPage = action(async (ctx) => {
-  const currentPath = ctx.get(pathAtom);
-  const isNotePath = !currentPath.startsWith("/note/");
-
-  if (isNotePath) {
+const getPage = action(async (ctx) => {
+  const currentPath = getCurrentPath(ctx);
+  const wrongPath = !currentPath.startsWith('/note/');
+  if (wrongPath) {
     return noteAtom(ctx, null);
   }
-
-  const note = ctx.get(pathAtom).replace("/note/", "");
-
+  const note = currentPath.replace('/note/', '');
   try {
     noteAtom(ctx, null);
     const { data } = await getNote(note);
     return noteAtom(ctx, data || []);
   } catch (e) {
     const error = e as AxiosError;
-    if (error?.message !== "canceled") {
+    if (error?.message !== 'canceled') {
       if (!secondTry) {
         secondTry = true;
         getPage(ctx);
@@ -33,15 +34,19 @@ export const getPage = action(async (ctx) => {
         errorAtom(ctx, true);
       }
     }
-    // console.warn(error);
   }
 });
 
-export const subToNoteUpdate = (ctx: Ctx) => {
-  if (noteHaveSub) return;
-  noteHaveSub = true;
-  pathAtom.onChange((ctx) => {
-    getPage(ctx);
-  });
-  !ctx.get(noteAtom) && getPage(ctx);
+export const subscribe = (ctx: Ctx) => {
+  if (!noteHaveSub) {
+    noteHaveSub = true;
+    subToPathAtom((ctx) => {
+      getPage(ctx);
+    });
+    !ctx.get(noteAtom) && getPage(ctx);
+  }
+  return {
+    notes: ctx.get(noteAtom),
+    error: ctx.get(errorAtom),
+  };
 };
