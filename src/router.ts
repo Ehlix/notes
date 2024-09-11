@@ -2,7 +2,7 @@ import { action, atom, Ctx } from '@reatom/core';
 import { VNode } from 'snabbdom';
 import { indexLayout } from './pages/IndexLayout';
 import { aboutPage } from './pages/about/AboutPage';
-import { NotesPage } from './pages/notes/NotesPage';
+import { NotesPage } from './pages/notesList/NotesPage';
 import { NotePage } from './pages/note/NotePage';
 
 const pathAtom = atom(window.location.pathname);
